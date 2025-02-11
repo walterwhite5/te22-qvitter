@@ -1,8 +1,13 @@
 import "dotenv/config"
 import express from "express"
 import nunjucks from "nunjucks"
+import indexRouter from "./routes/index.js"
 
 const app = express()
+
+app.use("/", indexRouter)
+
+
 const port = 3000
 
 nunjucks.configure("views", {
@@ -11,11 +16,10 @@ nunjucks.configure("views", {
 })
 
 app.use(express.static("public"))
+//app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get("/", (req, res) => {
-    res.send("tjena")
-})
+
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:$(port)`)
+    console.log(`Example app listening at http://localhost:${port}`)
 })
