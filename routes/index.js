@@ -31,8 +31,8 @@ router.get("/", async (req, res) => {
     ORDER BY updated_at DESC;`)
 
   res.render("index.njk", {
-    title: "Fireplace - All posts",
-    message: "This is fine...",
+    title: "Cheap twitter clone - All posts",
+    message: "god has abandoned us",
     tweets: tweets,
   })
 })
